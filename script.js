@@ -45,6 +45,7 @@ var questions = [
 //global variables
 var startButton = document.querySelector("#start-button");
 var mainContent = document.querySelector("#main-content");
+var optionsContent = document.querySelector("#options");
 
 startButton.addEventListener("click", start);
 function start() {
@@ -53,5 +54,29 @@ function start() {
 }
 
 function getQuestionOne() {
-  console.log(questions[0]);
+  var questionEl = document.createElement("h1");
+  questionEl.textContent = questions[0].question;
+  mainContent.prepend(questionEl);
+
+  for (var i = 0; i < questions[0].choices.length; i++) {
+    var option = document.createElement("li");
+      option.setAttribute("id", questions[0].choices[i]);
+      option.textContent = questions[0].choices[i];
+      optionsContent.append(option)
+
+      option.addEventListener("click", function (event) {
+          console.log(event.target.id)
+          if (event.target.id === questions[0].correctAnswer) {
+              console.log('correct')
+          } else {
+              console.log('incorrect')
+          }
+          getQuestionTwo()
+      })
+  }
+}
+
+function getQuestionTwo() {
+    // clear your question div and clear your option list
+    
 }
