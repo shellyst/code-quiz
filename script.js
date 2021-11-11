@@ -41,3 +41,17 @@ var questions = [
     correctAnswer: "option 5/5",
   },
 ];
+
+//global variables
+var startButton = document.querySelector("#start-button");
+var mainContent = document.querySelector("#main-content");
+
+startButton.addEventListener("click", start);
+function start() {
+  startButton.setAttribute("class", "hidden");
+  getQuestionOne();
+}
+
+function getQuestionOne() {
+  console.log(questions[0]);
+}
