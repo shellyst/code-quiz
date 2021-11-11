@@ -60,23 +60,70 @@ function getQuestionOne() {
 
   for (var i = 0; i < questions[0].choices.length; i++) {
     var option = document.createElement("li");
-      option.setAttribute("id", questions[0].choices[i]);
-      option.textContent = questions[0].choices[i];
-      optionsContent.append(option)
+    option.setAttribute("id", questions[0].choices[i]);
+    option.textContent = questions[0].choices[i];
+    optionsContent.append(option);
 
-      option.addEventListener("click", function (event) {
-          console.log(event.target.id)
-          if (event.target.id === questions[0].correctAnswer) {
-              console.log('correct')
-          } else {
-              console.log('incorrect')
-          }
-          getQuestionTwo()
-      })
+    option.addEventListener("click", function (event) {
+      console.log(event.target.id);
+      if (event.target.id === questions[0].correctAnswer) {
+        console.log("correct");
+      } else {
+        console.log("incorrect");
+      }
+      getQuestionTwo();
+    });
   }
 }
 
 function getQuestionTwo() {
-    // clear your question div and clear your option list
-    
+  // clear your question div and clear your option list
+  //NEED TO ADD ABILITY TO CLEAR BEFORE RESTARTING THE FUNCTION HERE
+
+  var questionEl = document.createElement("h1");
+  questionEl.textContent = questions[1].question;
+  mainContent.prepend(questionEl);
+
+  for (var i = 0; i < questions[1].choices.length; i++) {
+    var option = document.createElement("li");
+    option.setAttribute("id", questions[1].choices[i]);
+    option.textContent = questions[0].choices[i];
+    optionsContent.append(option);
+
+    option.addEventListener("click", function (event) {
+      console.log(event.target.id);
+      if (event.target.id === questions[0].correctAnswer) {
+        console.log("correct");
+      } else {
+        console.log("incorrect");
+      }
+      getQuestionThree();
+    });
+  }
+}
+
+function getQuestionThree() {
+  // clear your question div and clear your option list
+  //NEED TO ADD ABILITY TO CLEAR BEFORE RESTARTING THE FUNCTION HERE
+
+  var questionEl = document.createElement("h1");
+  questionEl.textContent = questions[2].question;
+  mainContent.prepend(questionEl);
+
+  for (var i = 0; i < questions[2].choices.length; i++) {
+    var option = docuent.createElement("li");
+    option.setAttribute("id", questions[1].choices[i]);
+    option.textContent = questions[0].choices[i];
+    optionsContent.append(option);
+
+    option.addEventListener("click", function (event) {
+      console.log(event.target.id);
+      if (event.target.id === questions[0].correctAnswer) {
+        console.log("correct");
+      } else {
+        console.log("incorrect");
+      }
+      getQuestion4();
+    });
+  }
 }
