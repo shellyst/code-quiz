@@ -191,6 +191,10 @@ function getQuestionFive() {
   }
 }
 
+function endGame() {
+  console.log("The quiz is over!");
+}
+
 //CLEAR PAGE
 //when this function runs, the next question function runs right after
 function clearPage() {
