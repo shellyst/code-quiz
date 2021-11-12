@@ -57,7 +57,7 @@ function start() {
 function getQuestionOne() {
   var questionEl = document.createElement("h1");
   questionEl.textContent = questions[0].question;
-  mainContent.prepend(questionEl);
+  questionContent.append(questionEl);
 
   for (var i = 0; i < questions[0].choices.length; i++) {
     var option = document.createElement("li");
@@ -78,17 +78,13 @@ function getQuestionOne() {
 }
 
 function getQuestionTwo() {
-  // clear your question div and clear your option list
-  //NEED TO ADD ABILITY TO CLEAR BEFORE RESTARTING THE FUNCTION HERE
-  //OTHER POSSIBLE SOLUTION: when li is clicked, page clears
-
-  //WHEN YOU CLICK SOMETHING ON PAGE, IT DISAPPEARS
+  // Clears previous content on page.
   questionContent.innerHTML = "";
   optionsContent.innerHTML = "";
 
   var questionEl = document.createElement("h1");
   questionEl.textContent = questions[1].question;
-  mainContent.prepend(questionEl);
+  questionContent.append(questionEl);
 
   for (var i = 0; i < questions[1].choices.length; i++) {
     var option = document.createElement("li");
@@ -109,14 +105,13 @@ function getQuestionTwo() {
 }
 
 function getQuestionThree() {
-  // clear your question div and clear your option list
-  //NEED TO ADD ABILITY TO CLEAR BEFORE RESTARTING THE FUNCTION HERE
+  // Clears previous content on page.
   questionContent.innerHTML = "";
   optionsContent.innerHTML = "";
 
   var questionEl = document.createElement("h1");
   questionEl.textContent = questions[2].question;
-  mainContent.prepend(questionEl);
+  questionContent.append(questionEl);
 
   for (var i = 0; i < questions[2].choices.length; i++) {
     var option = document.createElement("li");
@@ -137,14 +132,13 @@ function getQuestionThree() {
 }
 
 function getQuestionFour() {
-  // clear your question div and clear your option list
-  //NEED TO ADD ABILITY TO CLEAR BEFORE RESTARTING THE FUNCTION HERE
+  // Clears previous content on page.
   questionContent.innerHTML = "";
   optionsContent.innerHTML = "";
 
   var questionEl = document.createElement("h1");
   questionEl.textContent = questions[3].question;
-  mainContent.prepend(questionEl);
+  questionContent.append(questionEl);
 
   for (var i = 0; i < questions[3].choices.length; i++) {
     var option = document.createElement("li");
@@ -165,14 +159,13 @@ function getQuestionFour() {
 }
 
 function getQuestionFive() {
-  // clear your question div and clear your option list
-  //NEED TO ADD ABILITY TO CLEAR BEFORE RESTARTING THE FUNCTION HERE
+  // Clears previous content on page.
   questionContent.innerHTML = "";
   optionsContent.innerHTML = "";
 
   var questionEl = document.createElement("h1");
   questionEl.textContent = questions[4].question;
-  mainContent.prepend(questionEl);
+  questionContent.append(questionEl);
 
   for (var i = 0; i < questions[4].choices.length; i++) {
     var option = document.createElement("li");
@@ -195,12 +188,6 @@ function endGame() {
   console.log("The quiz is over!");
 }
 
-//CLEAR PAGE
-//when this function runs, the next question function runs right after
-function clearPage() {
-  mainContent.parentElement.removeChild(mainContent);
-}
-
 //TIMER FUNCTION WILL GO HERE
 //setInterval
 var counter = 75;
@@ -211,6 +198,7 @@ var countdown = function () {
   }
 };
 //HIGHSCORES FUNCTION WILL GO HERE
+// function setData();
 //highscores stored in localStorage, get from robot game
 
 //DISPLAY ANSWER
