@@ -46,6 +46,7 @@ var questions = [
 var startButton = document.querySelector("#start-button");
 var mainContent = document.querySelector("#main-content");
 var optionsContent = document.querySelector("#options");
+var questionContent = document.querySelector("#questionID");
 
 startButton.addEventListener("click", start);
 function start() {
@@ -79,6 +80,11 @@ function getQuestionOne() {
 function getQuestionTwo() {
   // clear your question div and clear your option list
   //NEED TO ADD ABILITY TO CLEAR BEFORE RESTARTING THE FUNCTION HERE
+  //OTHER POSSIBLE SOLUTION: when li is clicked, page clears
+
+  //WHEN YOU CLICK SOMETHING ON PAGE, IT DISAPPEARS
+  questionContent.innerHTML = "";
+  optionsContent.innerHTML = "";
 
   var questionEl = document.createElement("h1");
   questionEl.textContent = questions[1].question;
@@ -87,12 +93,12 @@ function getQuestionTwo() {
   for (var i = 0; i < questions[1].choices.length; i++) {
     var option = document.createElement("li");
     option.setAttribute("id", questions[1].choices[i]);
-    option.textContent = questions[0].choices[i];
+    option.textContent = questions[1].choices[i];
     optionsContent.append(option);
 
     option.addEventListener("click", function (event) {
       console.log(event.target.id);
-      if (event.target.id === questions[0].correctAnswer) {
+      if (event.target.id === questions[1].correctAnswer) {
         console.log("correct");
       } else {
         console.log("incorrect");
@@ -105,25 +111,102 @@ function getQuestionTwo() {
 function getQuestionThree() {
   // clear your question div and clear your option list
   //NEED TO ADD ABILITY TO CLEAR BEFORE RESTARTING THE FUNCTION HERE
+  questionContent.innerHTML = "";
+  optionsContent.innerHTML = "";
 
   var questionEl = document.createElement("h1");
   questionEl.textContent = questions[2].question;
   mainContent.prepend(questionEl);
 
   for (var i = 0; i < questions[2].choices.length; i++) {
-    var option = docuent.createElement("li");
-    option.setAttribute("id", questions[1].choices[i]);
-    option.textContent = questions[0].choices[i];
+    var option = document.createElement("li");
+    option.setAttribute("id", questions[2].choices[i]);
+    option.textContent = questions[2].choices[i];
     optionsContent.append(option);
 
     option.addEventListener("click", function (event) {
       console.log(event.target.id);
-      if (event.target.id === questions[0].correctAnswer) {
+      if (event.target.id === questions[2].correctAnswer) {
         console.log("correct");
       } else {
         console.log("incorrect");
       }
-      getQuestion4();
+      getQuestionFour();
     });
   }
 }
+
+function getQuestionFour() {
+  // clear your question div and clear your option list
+  //NEED TO ADD ABILITY TO CLEAR BEFORE RESTARTING THE FUNCTION HERE
+  questionContent.innerHTML = "";
+  optionsContent.innerHTML = "";
+
+  var questionEl = document.createElement("h1");
+  questionEl.textContent = questions[3].question;
+  mainContent.prepend(questionEl);
+
+  for (var i = 0; i < questions[3].choices.length; i++) {
+    var option = document.createElement("li");
+    option.setAttribute("id", questions[3].choices[i]);
+    option.textContent = questions[3].choices[i];
+    optionsContent.append(option);
+
+    option.addEventListener("click", function (event) {
+      console.log(event.target.id);
+      if (event.target.id === questions[3].correctAnswer) {
+        console.log("correct");
+      } else {
+        console.log("incorrect");
+      }
+      getQuestionFive();
+    });
+  }
+}
+
+function getQuestionFive() {
+  // clear your question div and clear your option list
+  //NEED TO ADD ABILITY TO CLEAR BEFORE RESTARTING THE FUNCTION HERE
+  questionContent.innerHTML = "";
+  optionsContent.innerHTML = "";
+
+  var questionEl = document.createElement("h1");
+  questionEl.textContent = questions[4].question;
+  mainContent.prepend(questionEl);
+
+  for (var i = 0; i < questions[4].choices.length; i++) {
+    var option = document.createElement("li");
+    option.setAttribute("id", questions[4].choices[i]);
+    option.textContent = questions[4].choices[i];
+    optionsContent.append(option);
+
+    option.addEventListener("click", function (event) {
+      console.log(event.target.id);
+      if (event.target.id === questions[4].correctAnswer) {
+        console.log("correct");
+      } else {
+        console.log("incorrect");
+      }
+    });
+  }
+}
+
+//CLEAR PAGE
+//when this function runs, the next question function runs right after
+function clearPage() {
+  mainContent.parentElement.removeChild(mainContent);
+}
+
+//TIMER FUNCTION WILL GO HERE
+//setInterval
+var counter = 75;
+var countdown = function () {
+  console.log(counter);
+  if (counter === 0) {
+    console.log("The game is over!");
+  }
+};
+//HIGHSCORES FUNCTION WILL GO HERE
+//highscores stored in localStorage, get from robot game
+
+//DISPLAY ANSWER
