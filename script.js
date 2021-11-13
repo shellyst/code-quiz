@@ -223,9 +223,19 @@ var countdown = function () {
     console.log("The game is over!");
     clearInterval(startCountdown);
   }
-};
 
-var startCountdown = setInterval(countdown, 1000);
+  var startCountdown = setInterval(function () {
+    document.getElementsById("timer").innerHTML.counter;
+    if (counter <= 0) {
+      clearInterval(startCountdown);
+      if (questionContent < questions.length - 1) {
+        endGame();
+      }
+    }
+  }, 1000);
+
+  getQuestionOne();
+};
 
 //HIGHSCORES FUNCTION WILL GO HERE
 // function setData();
