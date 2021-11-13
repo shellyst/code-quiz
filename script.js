@@ -47,6 +47,7 @@ var startButton = document.querySelector("#start-button");
 var mainContent = document.querySelector("#main-content");
 var optionsContent = document.querySelector("#options");
 var questionContent = document.querySelector("#questionID");
+var introContent = document.querySelector("#introText");
 
 startButton.addEventListener("click", start);
 function start() {
@@ -55,6 +56,10 @@ function start() {
 }
 
 function getQuestionOne() {
+  // Clears previous content on page.
+  questionContent.innerHTML = "";
+  introContent.innerHTML = "";
+
   var questionEl = document.createElement("h1");
   questionEl.textContent = questions[0].question;
   questionEl.className = "questClass";

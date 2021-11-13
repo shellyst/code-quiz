@@ -8,13 +8,24 @@
     <title>Code Quiz</title>
   </head>
   <body>
-    <div id="highscore">Highscore</div>
+    <header>
+      <div id="highscore">Highscore</div>
+      <div id="timer">Timer</div>
+    </header>
     <div id="main-content">
-      <div id="timer"></div>
-      <div id="questionID"></div>
+      <div id="questionID">
+        <h1 class="title">Coding Quiz Challenge</h1>
+        <p id="introText">
+          Try to answer the following code-related questions within the time
+          limit. Keep in mind that incorrect answers will penalize your
+          score/time by 10 seconds!
+        </p>
+      </div>
       <ul id="options"></ul>
+      <footer>
+        <button id="start-button">Start Quiz</button>
+      </footer>
     </div>
-    <button id="start-button">Start Quiz</button>
     <script src="script.js" />
   </body>
 </html>
