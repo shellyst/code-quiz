@@ -44,6 +44,7 @@ var questionContent = document.querySelector("#questionID");
 var introContent = document.querySelector("#introText");
 var lineDivider = document.querySelector("#lineBreak");
 var timer = document.querySelector("#timer");
+var score = 0;
 
 startButton.addEventListener("click", start);
 function start() {
@@ -74,6 +75,7 @@ function getQuestionOne() {
       console.log(event.target.id);
       if (event.target.id === questions[0].correctAnswer) {
         console.log("correct");
+        score += 20;
       } else {
         console.log("incorrect");
       }
@@ -103,6 +105,7 @@ function getQuestionTwo() {
       console.log(event.target.id);
       if (event.target.id === questions[1].correctAnswer) {
         console.log("correct");
+        score += 20;
       } else {
         console.log("incorrect");
       }
@@ -132,6 +135,7 @@ function getQuestionThree() {
       console.log(event.target.id);
       if (event.target.id === questions[2].correctAnswer) {
         console.log("correct");
+        score += 20;
       } else {
         console.log("incorrect");
       }
@@ -161,6 +165,7 @@ function getQuestionFour() {
       console.log(event.target.id);
       if (event.target.id === questions[3].correctAnswer) {
         console.log("correct");
+        score += 20;
       } else {
         console.log("incorrect");
       }
@@ -190,6 +195,7 @@ function getQuestionFive() {
       console.log(event.target.id);
       if (event.target.id === questions[4].correctAnswer) {
         console.log("correct");
+        score += 20;
       } else {
         console.log("incorrect");
       }
@@ -219,13 +225,25 @@ function endGame() {
   var submitButton = document.createElement("button");
   submitButton.textContent = "Submit";
   questionContent.append(submitButton);
-
+  submitButton.addEventListener("click", function () {
+    //Highscore
+    var storage = JSON.parse(localStorage.getItem("user"));
+    console.log(storage)
+    if (storage === null) {
+      storage = [];
+    }
+    var user = {
+      name: input.value,
+      score: score,
+    };
+    storage.push(user);
+    localStorage.setItem("user", JSON.stringify(storage));
+    window.location.href = "highscore.html";
+  });
   console.log("The quiz is over!");
+
 }
 
-//Test.
-
-//TIMER FUNCTION WILL GO HERE
 //setInterval
 var counter = 75;
 
@@ -238,6 +256,11 @@ function setTime() {
     timer.textContent = counter;
   }, 1000);
 }
+
+// Check if localStorage exists.
+// Set empty array.
+// Push user object to empty array, save as objects.
+//JSON.stringify when storing, JSON.parse when retrieving
 
 //HIGHSCORES FUNCTION WILL GO HERE
 // function setData();
