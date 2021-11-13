@@ -223,7 +223,7 @@ function endGame() {
   console.log("The quiz is over!");
 }
 
-//
+//Test.
 
 //TIMER FUNCTION WILL GO HERE
 //setInterval
