@@ -43,10 +43,13 @@ var optionsContent = document.querySelector("#options");
 var questionContent = document.querySelector("#questionID");
 var introContent = document.querySelector("#introText");
 var lineDivider = document.querySelector("#lineBreak");
+var timer = document.querySelector("#timer");
 
 startButton.addEventListener("click", start);
 function start() {
   startButton.setAttribute("class", "hidden");
+  setTime();
+
   getQuestionOne();
 }
 
@@ -203,39 +206,38 @@ function endGame() {
   var questionEl = document.createElement("h1");
   questionEl.textContent = "All done!";
   questionEl.className = "questClass";
-  questionContent.append(questionEl);
+  questionContent.prepend(questionEl);
 
   var final = document.createElement("p");
   final.setAttribute("id", "final-score");
   final.textContent = "Your final score is ___.";
-  optionsContent.append(final);
+  questionContent.append(final);
+
+  var input = document.createElement("input");
+  questionContent.append(input);
+
+  var submitButton = document.createElement("button");
+  submitButton.textContent = "Submit";
+  questionContent.append(submitButton);
 
   console.log("The quiz is over!");
 }
 
+//
+
 //TIMER FUNCTION WILL GO HERE
 //setInterval
 var counter = 75;
-var countdown = function () {
-  console.log(counter);
-  if (counter === 0) {
-    //run endGame
-    console.log("The game is over!");
-    clearInterval(startCountdown);
-  }
 
-  var startCountdown = setInterval(function () {
-    document.getElementsById("timer").innerHTML.counter;
-    if (counter <= 0) {
-      clearInterval(startCountdown);
-      if (questionContent < questions.length - 1) {
-        endGame();
-      }
+function setTime() {
+  var countdown = setInterval(function () {
+    counter--;
+    if (counter === -1) {
+      clearInterval(countdown);
     }
+    timer.textContent = counter;
   }, 1000);
-
-  getQuestionOne();
-};
+}
 
 //HIGHSCORES FUNCTION WILL GO HERE
 // function setData();
