@@ -1,9 +1,3 @@
-//Questions
-//Choices
-//Correct Answers
-
-//array called questions - objects that contain question, 4 choices, 1 correct answer
-
 //eventListener to start quiz on button
 //1. going to make start button disappear
 //2. going to call a new function - name it getQuestionOne
@@ -38,7 +32,7 @@ var questions = [
   {
     question: "Question number 5?",
     choices: ["option 1/5", "option 2/5", "option 3/5", "option 4/5"],
-    correctAnswer: "option 5/5",
+    correctAnswer: "option 4/5",
   },
 ];
 
@@ -55,6 +49,7 @@ function start() {
   getQuestionOne();
 }
 
+// Function to ask first question, and offer choices.
 function getQuestionOne() {
   // Clears previous content on page.
   questionContent.innerHTML = "";
@@ -83,6 +78,7 @@ function getQuestionOne() {
   }
 }
 
+// Function to ask second question, and offer choices.
 function getQuestionTwo() {
   // Clears previous content on page.
   questionContent.innerHTML = "";
@@ -111,6 +107,7 @@ function getQuestionTwo() {
   }
 }
 
+// Function to ask third question, and offer choices.
 function getQuestionThree() {
   // Clears previous content on page.
   questionContent.innerHTML = "";
@@ -139,6 +136,7 @@ function getQuestionThree() {
   }
 }
 
+// Function to ask fourth question, and offer choices.
 function getQuestionFour() {
   // Clears previous content on page.
   questionContent.innerHTML = "";
@@ -167,6 +165,7 @@ function getQuestionFour() {
   }
 }
 
+// Function to ask fifth question, and offer choices.
 function getQuestionFive() {
   // Clears previous content on page.
   questionContent.innerHTML = "";
@@ -190,11 +189,15 @@ function getQuestionFive() {
       } else {
         console.log("incorrect");
       }
+      endGame();
     });
   }
 }
 
 function endGame() {
+  // Clears previous page content.
+  questionContent.innerHTML = "";
+  optionsContent.innerHTML = "";
   console.log("The quiz is over!");
 }
 
