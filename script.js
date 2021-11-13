@@ -57,6 +57,7 @@ function start() {
 function getQuestionOne() {
   var questionEl = document.createElement("h1");
   questionEl.textContent = questions[0].question;
+  questionEl.className = "questClass";
   questionContent.append(questionEl);
 
   for (var i = 0; i < questions[0].choices.length; i++) {
@@ -84,6 +85,7 @@ function getQuestionTwo() {
 
   var questionEl = document.createElement("h1");
   questionEl.textContent = questions[1].question;
+  questionEl.className = "questClass";
   questionContent.append(questionEl);
 
   for (var i = 0; i < questions[1].choices.length; i++) {
@@ -111,6 +113,7 @@ function getQuestionThree() {
 
   var questionEl = document.createElement("h1");
   questionEl.textContent = questions[2].question;
+  questionEl.className = "questClass";
   questionContent.append(questionEl);
 
   for (var i = 0; i < questions[2].choices.length; i++) {
@@ -138,6 +141,7 @@ function getQuestionFour() {
 
   var questionEl = document.createElement("h1");
   questionEl.textContent = questions[3].question;
+  questionEl.className = "questClass";
   questionContent.append(questionEl);
 
   for (var i = 0; i < questions[3].choices.length; i++) {
@@ -165,6 +169,7 @@ function getQuestionFive() {
 
   var questionEl = document.createElement("h1");
   questionEl.textContent = questions[4].question;
+  questionEl.className = "questClass";
   questionContent.append(questionEl);
 
   for (var i = 0; i < questions[4].choices.length; i++) {
