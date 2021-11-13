@@ -42,6 +42,7 @@ var mainContent = document.querySelector("#main-content");
 var optionsContent = document.querySelector("#options");
 var questionContent = document.querySelector("#questionID");
 var introContent = document.querySelector("#introText");
+var lineDivider = document.querySelector("#lineBreak");
 
 startButton.addEventListener("click", start);
 function start() {
@@ -198,6 +199,17 @@ function endGame() {
   // Clears previous page content.
   questionContent.innerHTML = "";
   optionsContent.innerHTML = "";
+
+  var questionEl = document.createElement("h1");
+  questionEl.textContent = "All done!";
+  questionEl.className = "questClass";
+  questionContent.append(questionEl);
+
+  var final = document.createElement("p");
+  final.setAttribute("id", "final-score");
+  final.textContent = "Your final score is ___.";
+  optionsContent.append(final);
+
   console.log("The quiz is over!");
 }
 
@@ -207,9 +219,14 @@ var counter = 75;
 var countdown = function () {
   console.log(counter);
   if (counter === 0) {
+    //run endGame
     console.log("The game is over!");
+    clearInterval(startCountdown);
   }
 };
+
+var startCountdown = setInterval(countdown, 1000);
+
 //HIGHSCORES FUNCTION WILL GO HERE
 // function setData();
 //highscores stored in localStorage, get from robot game
