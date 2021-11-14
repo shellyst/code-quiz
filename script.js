@@ -224,7 +224,7 @@ function endGame() {
 
   var final = document.createElement("p");
   final.setAttribute("id", "final-score");
-  final.textContent = "Your final score is ___.";
+  final.textContent = "Your final score is " + score + ".";
   questionContent.append(final);
 
   var input = document.createElement("input");
