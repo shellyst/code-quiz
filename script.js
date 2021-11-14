@@ -1,11 +1,3 @@
-//eventListener to start quiz on button
-//1. going to make start button disappear
-//2. going to call a new function - name it getQuestionOne
-
-//create function for each question - after each question called, render next getQuestion function
-//timer
-//highscores with localStorage
-
 // Questions Array
 
 var questions = [
@@ -53,16 +45,18 @@ var questions = [
   },
 ];
 
-//global variables
+// Global Variables
 var startButton = document.querySelector("#start-button");
 var mainContent = document.querySelector("#main-content");
 var optionsContent = document.querySelector("#options");
 var questionContent = document.querySelector("#questionID");
 var introContent = document.querySelector("#introText");
 var lineDivider = document.querySelector("#lineBreak");
+var answerDisplay = document.querySelector("#answerResult");
 var timer = document.querySelector("#timer");
 var score = 0;
 
+// Function to Begin Quiz
 startButton.addEventListener("click", start);
 function start() {
   startButton.setAttribute("class", "hidden");
@@ -90,6 +84,8 @@ function getQuestionOne() {
 
     option.addEventListener("click", function (event) {
       console.log(event.target.id);
+      answerCheck(0);
+
       if (event.target.id === questions[0].correctAnswer) {
         console.log("correct");
         score += 20;
@@ -214,6 +210,7 @@ function getQuestionFive() {
 
     option.addEventListener("click", function (event) {
       console.log(event.target.id);
+      answerCheck();
       if (event.target.id === questions[4].correctAnswer) {
         console.log("correct");
         score += 20;
@@ -226,12 +223,14 @@ function getQuestionFive() {
   }
 }
 
-//function answerCheck() {
-//dynamic HTML for answer
-//if answer is correct, display "Correct!"
-//else display incorrect and subtract 10 seconds from the time counter
-//place function within each question function?
-//}
+function answerCheck() {
+  var answers = document.createElement("p");
+  if (questions.choices === questions.correctAnswer) {
+    answers.textContent = "Correct!";
+  } else {
+    answers.textContent = "Wrong!";
+  }
+}
 
 function endGame() {
   // Clears previous page content.
@@ -284,7 +283,3 @@ function setTime() {
     timer.textContent = counter;
   }, 1000);
 }
-
-// Take 10 seconds away if answer wrong.
-
-//DISPLAY ANSWER

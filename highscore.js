@@ -33,3 +33,10 @@ function addUser() {
   // in the loop we want to create a li for each storage item at [i]
   // append
 }
+
+// To Clear High Scores
+var clearScores = document.querySelector("#clear-scores");
+clearScores.addEventListener("click", function () {
+  window.localStorage.removeItem("user");
+  container.textContent = "Cleared!";
+});
