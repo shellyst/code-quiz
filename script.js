@@ -10,29 +10,46 @@
 
 var questions = [
   {
-    question: "Question number 1?",
-    choices: ["option 1/1", "option 2/1", "option 3/1", "option 4/1"],
-    correctAnswer: "option 1/1",
+    question: "Commonly used data types do NOT include ___:",
+    choices: ["1. Alerts", "2. Strings", "3. Booleans", "4. Numbers"],
+    correctAnswer: "1. Alerts",
   },
   {
-    question: "Question number 2?",
-    choices: ["option 1/2", "option 2/2", "option 3/2", "option 4/2"],
-    correctAnswer: "option 2/2",
+    question: "The condition in an if/else statement is enclosed in ___:",
+    choices: [
+      "1. Quotes",
+      "2. Parentheses",
+      "3. Curly Brackets",
+      "4. Square Brackets",
+    ],
+    correctAnswer: "2. Parentheses",
   },
   {
-    question: "Question number 3?",
-    choices: ["option 1/3", "option 2/3", "option 3/3", "option 4/3"],
-    correctAnswer: "option 3/3",
+    question: "Arrays in Javascript can be used to store ___:",
+    choices: [
+      "1. Numbers and strings",
+      "2. Booleans",
+      "3. Other Arrays",
+      "4. All of the above",
+    ],
+    correctAnswer: "4. All of the above",
   },
   {
-    question: "Question number 4?",
-    choices: ["option 1/4", "option 2/4", "option 3/4", "option 4/4"],
-    correctAnswer: "option 4/4",
+    question:
+      "String values must be enclosed within ___ when being assigned to variables:",
+    choices: ["1. Commas", "2. Curly Brackets", "3. Quotes", "4. Parentheses"],
+    correctAnswer: "3. Quotes",
   },
   {
-    question: "Question number 5?",
-    choices: ["option 1/5", "option 2/5", "option 3/5", "option 4/5"],
-    correctAnswer: "option 4/5",
+    question:
+      "A very useful tool during development and debugging for printing content to the debugger is:",
+    choices: [
+      "1. Javascript",
+      "2. Terminal/Bash",
+      "3. For loops",
+      "4. Console log",
+    ],
+    correctAnswer: "4. Console log",
   },
 ];
 
@@ -109,6 +126,7 @@ function getQuestionTwo() {
         score += 20;
       } else {
         console.log("incorrect");
+        counter -= 10;
       }
       getQuestionThree();
     });
@@ -139,6 +157,7 @@ function getQuestionThree() {
         score += 20;
       } else {
         console.log("incorrect");
+        counter -= 10;
       }
       getQuestionFour();
     });
@@ -169,6 +188,7 @@ function getQuestionFour() {
         score += 20;
       } else {
         console.log("incorrect");
+        counter -= 10;
       }
       getQuestionFive();
     });
@@ -199,6 +219,7 @@ function getQuestionFive() {
         score += 20;
       } else {
         console.log("incorrect");
+        counter -= 10;
       }
       endGame();
     });
