@@ -204,6 +204,13 @@ function getQuestionFive() {
   }
 }
 
+//function answerCheck() {
+//dynamic HTML for answer
+//if answer is correct, display "Correct!"
+//else display incorrect and subtract 10 seconds from the time counter
+//place function within each question function
+//}
+
 function endGame() {
   // Clears previous page content.
   questionContent.innerHTML = "";
