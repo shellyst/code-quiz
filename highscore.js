@@ -27,7 +27,7 @@ function addUser() {
   for (var i = 0; i < storage.length; i++) {
     var listItem = document.createElement("li");
     listItem.textContent =
-      "name: " + storage[i].name + " score: " + storage[i].score;
+      "Name: " + storage[i].name + " Score: " + storage[i].score;
     container.append(listItem);
   }
   // in the loop we want to create a li for each storage item at [i]

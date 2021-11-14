@@ -228,7 +228,7 @@ function endGame() {
   submitButton.addEventListener("click", function () {
     //Highscore
     var storage = JSON.parse(localStorage.getItem("user"));
-    console.log(storage)
+    console.log(storage);
     if (storage === null) {
       storage = [];
     }
@@ -241,7 +241,6 @@ function endGame() {
     window.location.href = "highscore.html";
   });
   console.log("The quiz is over!");
-
 }
 
 //setInterval
@@ -257,13 +256,6 @@ function setTime() {
   }, 1000);
 }
 
-// Check if localStorage exists.
-// Set empty array.
-// Push user object to empty array, save as objects.
-//JSON.stringify when storing, JSON.parse when retrieving
-
-//HIGHSCORES FUNCTION WILL GO HERE
-// function setData();
-//highscores stored in localStorage, get from robot game
+// Take 10 seconds away if answer wrong.
 
 //DISPLAY ANSWER
