@@ -7,12 +7,17 @@
 }
 
 .backBtn {
-  color: #bd60e7;
+  color: white;
   text-decoration: none;
   display: flex;
   font-family: Arial, Helvetica, sans-serif;
   margin-left: 100px;
   margin-top: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 ul {
@@ -37,4 +42,20 @@ li {
   background: none;
   text-align: left;
   color: black;
+}
+
+button {
+  background-color: #351c75;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 15px 15px 15px 15px;
+  padding: 15px 35px;
+  font-size: 18px;
+}
+
+button:hover {
+  background: #bd60e7;
+  cursor: pointer;
 }
